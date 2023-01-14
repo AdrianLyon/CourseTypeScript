@@ -69,4 +69,34 @@ function sumaDos(n) {
     return parseInt(n) + 2;
 }
 sumaDos('2');
+const product = {
+    created_at: '',
+    modified_at: '',
+    name: ''
+};
+const nFeFibo = 3;
+function toNumber(s) {
+    if (!s)
+        return 0;
+    return parseInt(s);
+}
+const n = toNumber(undefined);
+function getUser(id) {
+    if (id < 0) {
+        null;
+    }
+    return {
+        id: 1,
+        name: 'felipe',
+        created_at: new Date()
+    };
+}
+const user = getUser(-1);
+console.log('user', user === null || user === void 0 ? void 0 : user.created_at);
+const difficulty = 0;
+const user2 = {
+    username: 'felipe',
+    difficulty: difficulty !== null && difficulty !== void 0 ? difficulty : 1,
+};
+console.log(user2);
 //# sourceMappingURL=index.js.map
