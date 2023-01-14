@@ -132,7 +132,7 @@ function sumaDos(n: number | string): number {
 }
 
 sumaDos('2')
-
+//union type
 type Audit = {
   created_at:string,
   modified_at:string
@@ -147,3 +147,17 @@ const product: Audit & Product = {
   modified_at:'',
   name:''
 }
+
+ //type literales
+type Fibo = 0|1|2|3|5
+const nFeFibo: Fibo = 3
+
+//nulleable type
+
+function toNumber(s: string | null | undefined) {
+  if (!s) return 0
+  return parseInt(s)
+}
+
+//const n = toNumber(null)
+const n = toNumber(undefined)
