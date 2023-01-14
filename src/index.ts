@@ -20,3 +20,18 @@ let checks: boolean[] = []
 let nums2: Array<number> =[]
 
 //nums.map(x => x.) //autocompletado de metodos
+
+let tuplas:[number, string[]] = [1,['cha','felis']]
+
+const chica = 's'
+const mediana = 'm'
+const grande = 'l'
+const extragrande = 'xl'
+
+enum Talla {Chica= 's', Mediana = 'm', Grande = 'l', Extragrande='xl'}
+const tallaGrande = Talla.Grande
+console.log(tallaGrande)
+
+const enum LoadingState {Idle, Loading, Success, Error}
+
+const estado = LoadingState.Success
