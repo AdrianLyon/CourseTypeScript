@@ -108,56 +108,122 @@ function ErrorUsario(): never {
   throw new Error("error de usuario");
 }
 
-let puntaje: number|string = 98
+let puntaje: number | string = 98;
 
-puntaje = 'hola mundo'
+puntaje = "hola mundo";
 
 type Animal = {
-  id:number,
-  estado: string
-}
+  id: number;
+  estado: string;
+};
 
 type User = {
-  id:number,
-  name: string
-}
+  id: number;
+  name: string;
+};
 
-let animal: User|Animal = {id: 1, estado: '', name:''}
+let animal: User | Animal = { id: 1, estado: "", name: "" };
 
 function sumaDos(n: number | string): number {
-  if(typeof n === 'number'){
-    return n + 2
+  if (typeof n === "number") {
+    return n + 2;
   }
-  return parseInt(n) + 2
+  return parseInt(n) + 2;
 }
 
-sumaDos('2')
+sumaDos("2");
 //union type
 type Audit = {
-  created_at:string,
-  modified_at:string
-}
+  created_at: string;
+  modified_at: string;
+};
 
 type Product = {
-  name: string
-}
+  name: string;
+};
 
 const product: Audit & Product = {
-  created_at:'',
-  modified_at:'',
-  name:''
-}
+  created_at: "",
+  modified_at: "",
+  name: "",
+};
 
- //type literales
-type Fibo = 0|1|2|3|5
-const nFeFibo: Fibo = 3
+//type literales
+type Fibo = 0 | 1 | 2 | 3 | 5;
+const nFeFibo: Fibo = 3;
 
 //nulleable type
 
 function toNumber(s: string | null | undefined) {
-  if (!s) return 0
-  return parseInt(s)
+  if (!s) return 0;
+  return parseInt(s);
 }
 
 //const n = toNumber(null)
-const n = toNumber(undefined)
+const n = toNumber(undefined);
+
+//optional chaining
+
+function getUser(id: number) {
+  if (id < 0) {
+    null;
+  }
+
+  return {
+    id: 1,
+    name: "felipe",
+    created_at: new Date(),
+  };
+}
+
+const user = getUser(-1);
+
+console.log("user", user?.created_at);
+
+//nullish coalescing operator
+
+const difficulty: number | null = 0;
+
+const user2 = {
+  username: "felipe",
+  difficulty: difficulty ?? 1,
+};
+
+console.log(user2);
+
+//type assertion
+
+const elemet: any = null;
+
+const elem1 = elemet as number;
+
+//mejor caso
+const input = document.getElementById("username") as HTMLInputElement;
+input.value;
+
+const input1 = <HTMLInputElement>document.getElementById("username");
+input1.value;
+
+//narrowing type
+
+function lala(x: string | number) {
+  if (typeof x === "number") {
+    x;
+  }
+
+  if (typeof x === "string") {
+    x;
+  }
+}
+
+//unknown type
+
+function procesa(algo: unknown) {
+  if (typeof algo === "string") {
+    return algo.toLocaleLowerCase();
+  }
+
+  if (typeof algo === "number") {
+    return algo.toString;
+  }
+}
