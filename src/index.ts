@@ -132,3 +132,18 @@ function sumaDos(n: number | string): number {
 }
 
 sumaDos('2')
+
+type Audit = {
+  created_at:string,
+  modified_at:string
+}
+
+type Product = {
+  name: string
+}
+
+const product: Audit & Product = {
+  created_at:'',
+  modified_at:'',
+  name:''
+}
