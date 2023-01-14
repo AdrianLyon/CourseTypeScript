@@ -107,3 +107,28 @@ validateEdad(18, "chanchito mega feliz");
 function ErrorUsario(): never {
   throw new Error("error de usuario");
 }
+
+let puntaje: number|string = 98
+
+puntaje = 'hola mundo'
+
+type Animal = {
+  id:number,
+  estado: string
+}
+
+type User = {
+  id:number,
+  name: string
+}
+
+let animal: User|Animal = {id: 1, estado: '', name:''}
+
+function sumaDos(n: number | string): number {
+  if(typeof n === 'number'){
+    return n + 2
+  }
+  return parseInt(n) + 2
+}
+
+sumaDos('2')

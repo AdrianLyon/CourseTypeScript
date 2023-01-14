@@ -50,10 +50,23 @@ const fn = (edad) => {
     }
     return "no puedes pasar";
 };
-function validateEdad(edad) {
+function validateEdad(edad, msg = "chanchito feliz") {
     if (edad > 17)
-        return "puedes ingresar";
+        return `puedes ingresar ${msg}`;
     return "no puedes pasar";
 }
-validateEdad(18, 22);
+validateEdad(18, "chanchito mega feliz");
+function ErrorUsario() {
+    throw new Error("error de usuario");
+}
+let puntaje = 98;
+puntaje = 'hola mundo';
+let animal = { id: 1, estado: '', name: '' };
+function sumaDos(n) {
+    if (typeof n === 'number') {
+        return n + 2;
+    }
+    return parseInt(n) + 2;
+}
+sumaDos('2');
 //# sourceMappingURL=index.js.map
