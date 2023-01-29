@@ -9,12 +9,21 @@ class DatosBasicos {
     get fullYear() {
         return this.created_at.getFullYear();
     }
+    get fullDesc() {
+        return this.name + ' ' + this.desc;
+    }
 }
 class Product extends DatosBasicos {
     constructor(stock, sku, name, desc, created_at, created_by) {
         super(name, desc, created_at, created_by);
         this.stock = stock;
         this.sku = sku;
+    }
+    get fullDesc() {
+        return 'Product: ' + super.fullDesc;
+    }
+    guardar() {
+        console.log('override guardar');
     }
 }
 class Categoria extends DatosBasicos {
@@ -24,6 +33,12 @@ class Categoria extends DatosBasicos {
     }
     agregarProductos(producto) {
         this.producto.push(producto);
+    }
+    get fullDesc() {
+        return 'Product: ' + super.fullDesc;
+    }
+    guardar() {
+        console.log('overg');
     }
 }
 let product = new Product(100, 1, 'phone', 'este es description', new Date(), 1);
